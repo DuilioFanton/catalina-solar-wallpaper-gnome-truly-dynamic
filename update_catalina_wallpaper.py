@@ -226,6 +226,21 @@ def write_atomic(file_path: Path, content: str) -> None:
     temp_path.replace(file_path)
 
 
+def compact_home_path(path: Path) -> str:
+    home_path = Path.home().resolve()
+    resolved = path.resolve()
+
+    try:
+        relative = resolved.relative_to(home_path)
+    except ValueError:
+        return str(resolved)
+
+    if str(relative) == ".":
+        return "~"
+
+    return f"~/{relative.as_posix()}"
+
+
 def apply_background_if_possible(xml_path: Path) -> None:
     if shutil.which("gsettings") is None:
         return
@@ -299,7 +314,8 @@ def main() -> int:
     except Exception as exc:  # noqa: BLE001
         if xml_path.exists():
             if args.verbose:
-                print(f"[warn] keeping existing XML because dynamic update failed: {exc}")
+                compact_xml_path = compact_home_path(xml_path)
+                print(f"[warn] keeping existing XML ({compact_xml_path}) because dynamic update failed: {exc}")
             return 0
 
         static_durations = FALLBACK_STATIC_DURATIONS.copy()
@@ -319,9 +335,10 @@ def main() -> int:
 
     if args.verbose:
         timezone_label = getattr(timezone, "key", str(timezone))
+        compact_xml_path = compact_home_path(xml_path)
         print(
             "[ok] updated"
-            f" {xml_path}"
+            f" {compact_xml_path}"
             f" using {source} data"
             f" (lat={latitude:.4f}, lon={longitude:.4f}, tz={timezone_label})"
         )

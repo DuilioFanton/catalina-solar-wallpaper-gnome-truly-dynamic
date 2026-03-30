@@ -5,4 +5,4 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/env python3 /home/duiliofanton/.local/share/backgrounds/gnome/update_catalina_wallpaper.py
+ExecStart=/usr/bin/env python3 %h/.local/share/backgrounds/gnome/update_catalina_wallpaper.py
