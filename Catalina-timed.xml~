@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<background>
+    <starttime>
+        <year>0</year>
+        <month>0</month>
+        <day>0</day>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+    </starttime>
+
+    <static><duration>19800.0</duration><file>Catalina-1.jpg</file></static>
+    <transition><duration>1800.0</duration><from>Catalina-1.jpg</from><to>Catalina-2.jpg</to></transition>
+
+    <static><duration>3600.0</duration><file>Catalina-2.jpg</file></static>
+    <transition><duration>1800.0</duration><from>Catalina-2.jpg</from><to>Catalina-3.jpg</to></transition>
+
+    <static><duration>9000.0</duration><file>Catalina-3.jpg</file></static>
+    <transition><duration>1800.0</duration><from>Catalina-3.jpg</from><to>Catalina-4.jpg</to></transition>
+
+    <static><duration>10800.0</duration><file>Catalina-4.jpg</file></static>
+    <transition><duration>1800.0</duration><from>Catalina-4.jpg</from><to>Catalina-5.jpg</to></transition>
+
+    <static><duration>9000.0</duration><file>Catalina-5.jpg</file></static>
+    <transition><duration>1800.0</duration><from>Catalina-5.jpg</from><to>Catalina-6.jpg</to></transition>
+
+    <static><duration>3600.0</duration><file>Catalina-6.jpg</file></static>
+    <transition><duration>1800.0</duration><from>Catalina-6.jpg</from><to>Catalina-7.jpg</to></transition>
+
+    <static><duration>3600.0</duration><file>Catalina-7.jpg</file></static>
+    <transition><duration>1800.0</duration><from>Catalina-7.jpg</from><to>Catalina-8.jpg</to></transition>
+
+    <static><duration>7200.0</duration><file>Catalina-8.jpg</file></static>
+    <transition><duration>1800.0</duration><from>Catalina-8.jpg</from><to>Catalina-9.jpg</to></transition>
+
+    <static><duration>3600.0</duration><file>Catalina-9.jpg</file></static>
+    <transition><duration>1800.0</duration><from>Catalina-9.jpg</from><to>Catalina-1.jpg</to></transition>
+</background>
